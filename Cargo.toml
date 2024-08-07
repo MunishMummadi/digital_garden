@@ -1,0 +1,24 @@
+[package]
+name = "digital-garden"
+version = "0.1.0"
+edition = "2021"
+authors = ["Munish Mummadi"]
+description = "A CLI tool for managing a digital garden of interconnected notes"
+
+[dependencies]
+structopt = "0.3"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+chrono = { version = "0.4", features = ["serde"] }
+tantivy = "0.19"
+petgraph = "0.6"
+tui = "0.19"
+crossterm = "0.25"
+git2 = "0.16"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = 'abort'
+strip = true
